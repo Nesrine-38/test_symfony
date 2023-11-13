@@ -1,0 +1,16 @@
+[
+    {
+        "_id": "a7c21d28-94de-421a-a5bb-97664d8fb2db",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/possessions",
+        "url": "http://127.0.0.1:8000/api/possessions",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-11-12T21:43:59.684Z",
+        "modified": "2023-11-12T21:43:59.684Z",
+        "headers": [],
+        "params": [],
+        "tests": []
+    }
+]
