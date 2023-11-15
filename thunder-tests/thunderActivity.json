@@ -8,9 +8,128 @@
         "method": "GET",
         "sortNum": 0,
         "created": "2023-11-12T21:43:59.684Z",
-        "modified": "2023-11-12T21:43:59.684Z",
+        "modified": "2023-11-15T17:38:54.923Z",
         "headers": [],
         "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\r\n  \"nom\": \"Example Possession\",\r\n  \"valeur\": 100.00,\r\n  \"type\": \"Example Type\",\r\n  \"user\": \"/api/users/8\"\r\n}\r\n",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "2bb5920a-c81d-4a98-a041-96694e456f69",
+        "colId": "history",
+        "containerId": "",
+        "name": "https://127.0.0.1/api/users",
+        "url": "https://127.0.0.1/api/users",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-11-15T15:03:43.370Z",
+        "modified": "2023-11-15T15:03:43.370Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\r\n  \"nom\": \"John\",\r\n  \"prenom\": \"Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"adresse\": \"123 Main Street\",\r\n  \"tel\": \"1234567890\",\r\n  \"birthDate\": \"1990-01-01\"\r\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "07fde598-8fc4-4a8c-bc06-82a383fcf4eb",
+        "colId": "history",
+        "containerId": "",
+        "name": "https://127.0.0.1:8000/api/users",
+        "url": "https://127.0.0.1:8000/api/users",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-11-15T15:03:51.736Z",
+        "modified": "2023-11-15T15:03:51.736Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\r\n  \"nom\": \"John\",\r\n  \"prenom\": \"Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"adresse\": \"123 Main Street\",\r\n  \"tel\": \"1234567890\",\r\n  \"birthDate\": \"1990-01-01\"\r\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "1b21e467-bcf1-4814-ae11-7f20d2b5c3ba",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/users",
+        "url": "http://127.0.0.1:8000/api/users",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-11-15T15:04:32.773Z",
+        "modified": "2023-11-15T15:07:35.590Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\r\n  \"nom\": \"Ishak\",\r\n  \"prenom\": \"Nesrine\",\r\n  \"email\": \"Ishak.nesrine@example.com\",\r\n  \"adresse\": \"4 allée fernand pelloutier\",\r\n  \"tel\": \"0767450390\",\r\n  \"birthDate\": \"1998-05-14\",\r\n  \"possessions\": []\r\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "66df845b-b482-4187-8449-e7dfc0d5155c",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/users",
+        "url": "http://127.0.0.1:8000/api/users",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-11-15T15:08:56.545Z",
+        "modified": "2023-11-15T15:25:51.541Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\r\n  \"nom\": \"Example Possession\",\r\n  \"valeur\": 100.00,\r\n  \"type\": \"Example Type\",\r\n  \"user\": \"/api/users/10\"\r\n}\r\n",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "cf410223-e70b-46d3-9086-de94c42940c7",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/possessions",
+        "url": "http://127.0.0.1:8000/api/possessions",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-11-15T15:22:48.025Z",
+        "modified": "2023-11-15T15:26:13.901Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\r\n  \"nom\": \"Example Possession\",\r\n  \"valeur\": 100.00,\r\n  \"type\": \"Example Type\",\r\n  \"user\": \"/api/users/8\"\r\n}\r\n",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "34f0ffe9-33d8-4271-8893-c7a4d526d2a1",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/userts",
+        "url": "http://127.0.0.1:8000/api/userts",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-11-15T15:25:46.495Z",
+        "modified": "2023-11-15T15:25:46.495Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\r\n  \"nom\": \"Example Possession\",\r\n  \"valeur\": 100.00,\r\n  \"type\": \"Example Type\",\r\n  \"user\": \"/api/users/10\"\r\n}\r\n",
+            "form": []
+        },
         "tests": []
     }
 ]

@@ -25,9 +25,9 @@ class Possession
     #[ORM\Column(length: 40)]
     private ?string $type = null;
 
-    #[ORM\ManyToOne(inversedBy: 'iduser')]
+    #[ORM\ManyToOne(inversedBy: 'user')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $iduser = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -77,14 +77,14 @@ class Possession
         return $this;
     }
 
-    public function getIduser(): ?User
+    public function getUser(): ?User
     {
-        return $this->iduser;
+        return $this->user;
     }
 
-    public function setIduser(?User $iduser): static
+    public function setUser(?User $user): static
     {
-        $this->iduser = $iduser;
+        $this->user = $user;
 
         return $this;
     }

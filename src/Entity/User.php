@@ -36,12 +36,12 @@ class User
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $birthDate = null;
 
-    #[ORM\OneToMany(mappedBy: 'iduser', targetEntity: Possession::class)]
-    private Collection $iduser;
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Possession::class)]
+    private Collection $possessions;
 
     public function __construct()
     {
-        $this->iduser = new ArrayCollection();
+        $this->possessions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -131,27 +131,27 @@ class User
     /**
      * @return Collection<int, Possession>
      */
-    public function getIduser(): Collection
+    public function getpossessions(): Collection
     {
-        return $this->iduser;
+        return $this->possessions;
     }
 
-    public function addIduser(Possession $iduser): static
+    public function addpossessions(Possession $possessions): static
     {
-        if (!$this->iduser->contains($iduser)) {
-            $this->iduser->add($iduser);
-            $iduser->setIduser($this);
+        if (!$this->possessions->contains($possessions)) {
+            $this->possessions->add($possessions);
+            $possessions->setpossessions($this);
         }
 
         return $this;
     }
 
-    public function removeIduser(Possession $iduser): static
+    public function removepossessions(Possession $possessions): static
     {
-        if ($this->iduser->removeElement($iduser)) {
+        if ($this->possessions->removeElement($possessions)) {
             // set the owning side to null (unless already changed)
-            if ($iduser->getIduser() === $this) {
-                $iduser->setIduser(null);
+            if ($possessions->getpossessions() === $this) {
+                $possessions->setpossessions(null);
             }
         }
 
