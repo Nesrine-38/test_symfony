@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\UserRepository;
+use App\Service\ServiceUser;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -39,7 +40,7 @@ class User
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Possession::class)]
     private Collection $possessions;
 
-    public function __construct()
+    public function __construct(private ServiceUser $serviceUser)
     {
         $this->possessions = new ArrayCollection();
     }
@@ -131,30 +132,34 @@ class User
     /**
      * @return Collection<int, Possession>
      */
-    public function getpossessions(): Collection
+    public function getPossessions(): Collection
     {
         return $this->possessions;
     }
 
-    public function addpossessions(Possession $possessions): static
+    public function addPossessions(Possession $possessions): static
     {
         if (!$this->possessions->contains($possessions)) {
             $this->possessions->add($possessions);
-            $possessions->setpossessions($this);
+            $possessions->setuser($this);
         }
 
         return $this;
     }
 
-    public function removepossessions(Possession $possessions): static
+    public function removePossessions(Possession $possessions): static
     {
         if ($this->possessions->removeElement($possessions)) {
             // set the owning side to null (unless already changed)
-            if ($possessions->getpossessions() === $this) {
-                $possessions->setpossessions(null);
+            if ($possessions->getuser() === $this) {
+                $possessions->setuser(null);
             }
         }
 
         return $this;
+    }
+    public function getAge(): ?int
+    {
+        return $this->serviceUser->calculateAge($this);
     }
 }
