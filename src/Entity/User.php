@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\UserRepository;
-use App\Service\ServiceUser;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -40,7 +39,7 @@ class User
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Possession::class)]
     private Collection $possessions;
 
-    public function __construct(private ServiceUser $serviceUser)
+    public function __construct()
     {
         $this->possessions = new ArrayCollection();
     }
@@ -157,9 +156,5 @@ class User
         }
 
         return $this;
-    }
-    public function getAge(): ?int
-    {
-        return $this->serviceUser->calculateAge($this);
     }
 }

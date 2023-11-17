@@ -84,12 +84,12 @@
         "method": "GET",
         "sortNum": 0,
         "created": "2023-11-15T15:08:56.545Z",
-        "modified": "2023-11-15T15:25:51.541Z",
+        "modified": "2023-11-16T22:55:09.772Z",
         "headers": [],
         "params": [],
         "body": {
             "type": "json",
-            "raw": "{\r\n  \"nom\": \"Example Possession\",\r\n  \"valeur\": 100.00,\r\n  \"type\": \"Example Type\",\r\n  \"user\": \"/api/users/10\"\r\n}\r\n",
+            "raw": "{\n  \"nom\": \"Example Possession\",\n  \"valeur\": 100.00,\n  \"type\": \"Example Type\",\n  \"user\": \"/api/users/10\"\n}\n",
             "form": []
         },
         "tests": []
