@@ -5,6 +5,7 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PossessionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 #[ApiResource]
 #[ORM\Entity(repositoryClass: PossessionRepository::class)]
 class Possession
@@ -22,8 +23,7 @@ class Possession
 
     #[ORM\Column(length: 40)]
     private ?string $type = null;
-
-    #[ORM\ManyToOne(inversedBy: 'user')]
+    #[ORM\ManyToOne(inversedBy: 'possessions')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 

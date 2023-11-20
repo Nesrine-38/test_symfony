@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\UserRepository;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\Common\Collections\ArrayCollection;
+use ApiPlatform\Core\Annotation\ApiProperty;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ApiResource]
@@ -35,7 +38,7 @@ class User
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $birthDate = null;
-
+    #[ApiSubresource]
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Possession::class)]
     private Collection $possessions;
 
@@ -131,18 +134,18 @@ class User
     /**
      * @return Collection<int, Possession>
      */
+    #[Groups(['user:read'])]
     public function getPossessions(): Collection
     {
         return $this->possessions;
     }
 
-    public function addPossessions(Possession $possessions): static
+    public function addPossession(Possession $possessions): static
     {
         if (!$this->possessions->contains($possessions)) {
             $this->possessions->add($possessions);
-            $possessions->setuser($this);
+            $possessions->setUser($this);
         }
-
         return $this;
     }
 
@@ -150,11 +153,30 @@ class User
     {
         if ($this->possessions->removeElement($possessions)) {
             // set the owning side to null (unless already changed)
-            if ($possessions->getuser() === $this) {
-                $possessions->setuser(null);
+            if ($possessions->getUser() === $this) {
+                $possessions->setUser(null);
             }
         }
 
         return $this;
     }
+    private int $age;
+ 
+    /**
+     * @param \DateTimeInterface $birthDate
+     * @return int
+     * 
+     */
+    public function getAge(): int
+    {
+ 
+        //Calcule de l'age d'user
+        $datetime1 = new \datetime('now'); // date actuelle
+        $datetime2 = $this->getBirthDate();
+        $age = $datetime1->diff($datetime2, true)->y; // le y = nombre d'années 
+        
+        
+        return $age;
+    }
+
 }
